@@ -3,7 +3,6 @@ import getAllPosts from "../lib/getAllPosts";
 
 export default async function Posts() {
   const posts = await getAllPosts();
-  console.log(posts);
 
   return (
     <div className="mt-8 max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-md">
