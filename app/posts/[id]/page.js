@@ -1,5 +1,15 @@
 import getPosts from '@/app/lib/getPost';
 
+// Dynamic Metadata Generator
+export async function generateMetadata({ params }) {
+  const post = await getPosts(params.id);
+
+  return {
+    title: post.title,
+    description: post.body.slice(0, 160), 
+  };
+}
+
 export default async function PostPage({ params }) {
   const { id } = params;
   const post = await getPosts(id);
